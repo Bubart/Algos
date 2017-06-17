@@ -22,14 +22,14 @@ int main()
 	LIST L;
 	init(&L);
 	nametype data[] = {{"Robert Michael","Lim", 'M'},
-						{"John Paul", "Lim", 'R'},
+						{"John Paul", "Jayme", 'R'},
 						{"Bojo", "Alcisto", 'R'},
 						};
 						
 	
 	populate(&L, data);
 	bubbleSort(&L);
-	printf("%s", L.elem[1].FName);
+	printf("%s", L.elem[0].FName);
 	return 0;
 }
 
@@ -55,7 +55,7 @@ void bubbleSort(LIST *L)
 	int i, j;
 	nametype swapdata;
 	for(i=0;i<L->last;i++){
-		for(j = 0; j< L->last-i; j++){
+		for(j = 0; j< L->last; j++){
 			if(strcmp(L->elem[j].LName, L->elem[j+1].LName)>0){
 				swapdata = L->elem[j];
 				L->elem[j] = L->elem[j+1];
